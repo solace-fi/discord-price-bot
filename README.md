@@ -8,15 +8,12 @@ Is based on [Minecraft Player Count Discord Bot](https://github.com/SpencerTorre
 
 ## How to use
 
-This bot is really easy to use.
-
 Just follow these steps:
 1. Have [Node.JS](https://nodejs.org) installed.
 2. Clone this repository to a folder on your computer.
 3. Open a terminal in that folder, and install the packages with `npm install`
 4. In the same terminal, type npm install discord.js
 5. Same thing for - npm install axios
-6. Open the `.env-template` file and configure it to your liking.
 
 For information on getting a bot token, follow the steps on [the Discord developer documentation.](https://discordapp.com/developers/docs/intro)
 
