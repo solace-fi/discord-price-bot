@@ -5,7 +5,7 @@ const client = new Discord.Client()
 // variables
 const coinId = 'solace';
 const guildId = '832767444488945725';
-const botSecret = 'OTcxNTgxOTU2MDcwNDQwOTYw.YnMmNQ.R8_f8uKuuKrVRILhf_AW9DPAEzM';
+const botSecret = '';
 
 
 function getPrices() {
