@@ -1,24 +1,32 @@
-# Cryptocurrency Price Status Discord Bot
+# Quick Start
 
-This bot will update its status message with the current price of the desired cryptocurrency.
+1. Provide valid .env
 
-Is based on [Minecraft Player Count Discord Bot](https://github.com/SpencerTorres/Minecraft-Player-Count-Discord-Bot) by Spencer Torres
+2. `./install.sh` => Install dependencies
 
-![Example bot setup.](https://i.imgur.com/aDy2dpj.png)
+3. `./run.sh` => Build and deploy bot
 
-## How to use
 
-Just follow these steps:
-1. Have [Node.JS](https://nodejs.org) installed.
-2. Clone this repository to a folder on your computer.
-3. Open a terminal in that folder, and install the packages with `npm install`
-4. In the same terminal, type npm install discord.js
-5. Same thing for - npm install axios
+# Prerequisites
 
-For information on getting a bot token, follow the steps on [the Discord developer documentation.](https://discordapp.com/developers/docs/intro)
+Discord bot invited to desired server
 
-## Extra Info
 
-This was created for my Discord server, but I wanted to share it with added flexibility for anyone to use.
+# Discord Cryptocurrency Price Bot
 
-This relies on the API hosted at https://api.coingecko.com
+Requests price information from Coingecko API every minute. If valid response, stores filtered data in a local cache (cache/cached_price_data.json)
+
+Discord bot retrieves information from cache and displays relevant data
+
+
+# Design philosophy
+
+Written from a 'paranoid about bot crashing' approach:
+
+- Typescript to minimise type, null and undefined errors
+
+- winston npm package for logging
+
+- Discord bot retrieves information from local cache for maximum data availability (in case last API call had an error)
+
+- pm2 to daemonize the Discord bot, and to restart the bot automatically if it crashes for some reaason

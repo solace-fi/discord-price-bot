@@ -1,15 +1,14 @@
 const axios = require('axios')
 const Discord = require('discord.js')
 const client = new Discord.Client()
+require('dotenv').config()
 
 // variables
 const coinId = 'solace';
 const guildId = '832767444488945725';
 const botSecret = '';
 
-
 function getPrices() {
-
 
 	// API for price data.
 	axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinId}`).then(res => {
@@ -26,6 +25,9 @@ function getPrices() {
 					type: 3 // Use activity type 3 which is "Watching"
 				}
 			})
+
+			client.user.setAvatar("./images/solace-logo.png")
+			
 			console.log('Updated price to', currentPrice)
 			client.guilds.find(guild => guild.id === `${guildId}`).me.setNickname(`${symbol} $${(currentPrice).toLocaleString().replace(/,/g,',')}`)
 
