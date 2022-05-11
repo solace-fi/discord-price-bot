@@ -1,3 +1,6 @@
+![](./images/screenshot.png)
+
+
 # Quick Start
 
 1. Provide valid .env
